@@ -9,7 +9,7 @@ Converts MP4 interviews to MP3 and transcribes them using OpenAI Whisper.
    pip install openai
    brew install ffmpeg
 
-2. export OPENAI_API_KEY="your-key-here"
+2. export OPENAI_API_KEY="your-key-here". Replace "your-key-here" with your Open AI API key 
 
 3. Update paths to match your system
 
