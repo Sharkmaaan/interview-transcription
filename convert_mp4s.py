@@ -7,12 +7,12 @@ from datetime import datetime
 from openai import OpenAI
 
 # Read API key from environment variable
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY")) #Replace key here with own API
 
-INPUT_DIR = "/Users/sanjayghosh/Documents/Interviews/MP4's"
-OUTPUT_DIR = "/Users/sanjayghosh/Documents/Interviews/MP3's"
-TRANSCRIPT_DIR = "/Users/sanjayghosh/Documents/Interviews/Transcripts"
-LOG_FILE = "/Users/sanjayghosh/Documents/Interviews/conversion.log"
+INPUT_DIR = #Put path to where the MP4's will be here
+OUTPUT_DIR = #Put path to where MP3's should go
+TRANSCRIPT_DIR = #Put path to where transcripts should go
+LOG_FILE = #Put path to where logs should go
 
 # Create output directories
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -37,7 +37,7 @@ for mp4_file in mp4_files:
     try:
         subprocess.run([
             "/opt/homebrew/bin/ffmpeg", "-i", mp4_file,
-            "-vn", "-acodec", "libmp3lame", "-q:a", "2",
+            "-vn", "-acodec", "libmp3lame", "-b:a", "32k",
             mp3_file
         ], check=True, capture_output=True)
         
